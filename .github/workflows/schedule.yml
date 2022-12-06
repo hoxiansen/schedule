@@ -15,4 +15,5 @@ jobs:
           distribution: adopt
           cache: maven
       - run: mvn -B clean package -f pom.xml
+      - run: java -cp schedule-1.0-SNAPSHOT.jar Demo
   
