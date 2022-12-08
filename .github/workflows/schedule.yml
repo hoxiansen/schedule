@@ -14,5 +14,5 @@ jobs:
           java-version: 8
           distribution: adopt
       - run: mvn -B clean package -f pom.xml
-      - run: java -cp ./target/schedule-1.0-SNAPSHOT.jar Demo
+      - run: java -cp ./target/schedule-1.0-SNAPSHOT.jar JuejinSignIn
   
