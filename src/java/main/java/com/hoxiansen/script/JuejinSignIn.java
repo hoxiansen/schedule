@@ -2,7 +2,6 @@ package com.hoxiansen.script;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.hoxiansen.util.NotifyUtil;
