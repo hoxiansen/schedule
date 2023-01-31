@@ -25,7 +25,7 @@ public class NotifyUtil {
             log.info("send notify by xizhi, body:{}", body);
             JSONObject obj = JSONUtil.parseObj(body);
             Integer code = obj.getInt("code");
-            if (code != null) {
+            if (code != 200) {
                 log.error("send notify by xizhi failed.body:{}", body);
             }
         }
