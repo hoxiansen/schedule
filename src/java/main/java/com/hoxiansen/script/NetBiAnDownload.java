@@ -24,7 +24,7 @@ public class NetBiAnDownload {
         Elements uls = document.getElementsByTag("ul");
         Element ul = getSpecificUl(uls);
         if (ul == null) {
-            log.error("parse document error, cannot find 'ul.clearfix' element.");
+            log.error("parse document error, cannot find 'ul.clearfix' element.html:\n{}", html);
             NotifyUtil.sendNotify("彼岸图网下载", "解析html文件失败，未找到ul.clearfix元素");
             return;
         }
