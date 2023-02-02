@@ -15,4 +15,4 @@ jobs:
           distribution: adopt
       - run: mvn -B clean package -f pom.xml
       - run: java -cp ./target/schedule-1.0-SNAPSHOT.jar com.hoxiansen.script.JuejinSignIn
-      - run: java -cp ./target/schedule-1.0-SNAPSHOT.jar com.hoxiansen.script.NetBiAnDownload
+#      - run: java -cp ./target/schedule-1.0-SNAPSHOT.jar com.hoxiansen.script.NetBiAnDownload
