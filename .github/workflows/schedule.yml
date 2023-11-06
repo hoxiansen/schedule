@@ -14,3 +14,5 @@ jobs:
           python-version: '3.12.0'
       - run: pip install requests
       - run: python src/juejin_sign.py
+        env:
+          JUEJIN_COOKIE: ${{ secrets.JUEJIN_COOKIE }}
