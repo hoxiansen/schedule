@@ -1,10 +1,12 @@
 from os import environ
 from base64 import b64encode
-import logging
 from typing import NoReturn
 
 import requests
 from nacl import encoding, public
+from . import logger
+
+log = logger.get_logger()
 
 
 def encrypt(public_key, secret_value) -> str:
@@ -45,7 +47,7 @@ def update_secret(name: str, value: str) -> NoReturn:
     token = environ['GP_TOKEN']
 
     if not token:
-        logging.error('未配置 GP_TOKEN, 更新 refresh_tokens 失败')
+        log.error('未配置 GP_TOKEN, 更新 refresh_tokens 失败')
         return
 
     key, key_id = get_pub_key(repos, token)

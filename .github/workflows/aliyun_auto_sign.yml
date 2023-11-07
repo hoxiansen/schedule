@@ -1,0 +1,19 @@
+name:
+  ALIYUN_AUTO_SIGN
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch: 
+jobs:
+  run-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.0'
+      - run: pip install requests
+      - run: python src/aliyun_sign.py
+        env:
+          ALIYUN_REFRESH_TOKEN: ${{ secrets.ALIYUN_REFRESH_TOKEN }}
+          GP_TOKEN: ${{ secrets.GP_TOKEN}}
