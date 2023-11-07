@@ -16,3 +16,6 @@ jobs:
       - run: python src/juejin_sign.py
         env:
           JUEJIN_COOKIE: ${{ secrets.JUEJIN_COOKIE }}
+      - run: python src/jlqc_sign.py
+        env:
+          JLQC_TOKEN: ${{ secrets.JLQC_TOKEN}}
