@@ -237,9 +237,9 @@ def main():
     new_refresh_token = result['refresh_token']
     try:
         github.update_secret('ALIYUN_REFRESH_TOKEN', new_refresh_token)
-        log.info('REFRESH_TOKEN 更新成功.')
+        log.info('ALIYUN_REFRESH_TOKEN 更新成功.')
     except Exception as e:
-        log.error(f'Action 更新 Github Secrets 失败: {e}')
+        log.error(f'Action 更新 Github Secrets: ALIYUN_REFRESH_TOKEN 失败: {e}')
 
 
 if __name__ == '__main__':
