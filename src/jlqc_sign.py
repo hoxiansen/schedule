@@ -10,7 +10,10 @@ log = logger.get_logger()
 def sign():
     url = 'https://app.geely.com/api/v1/userSign/sign/'
     ts = int(time.time())
-    formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ts))
+    gmt_time = time.gmtime(ts)
+    beijing_time = time.localtime(time.mktime(gmt_time) + (8 * 60 * 60))
+    formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", beijing_time)
+    log.info(f'ts={ts}, formatted_time={formatted_time}')
     cid = 'BLqo2nmmoPgGuJtFDWlUjRI2b1b'
     body = {
         'signDate': formatted_time,
