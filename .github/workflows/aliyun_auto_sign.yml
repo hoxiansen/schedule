@@ -18,3 +18,4 @@ jobs:
         env:
           ALIYUN_REFRESH_TOKEN: ${{ secrets.ALIYUN_REFRESH_TOKEN }}
           GP_TOKEN: ${{ secrets.GP_TOKEN}}
+          GITHUB_REPOS: ${{ github.repository }}
