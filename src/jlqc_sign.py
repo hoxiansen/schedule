@@ -18,7 +18,9 @@ def sign():
         'cId': cid
     }
     token = environ['JLQC_TOKEN']
-    x_data_sign = hashlib.md5(f'cId={cid}&signDate={ts}000&ts={ts}0]3K@\'9MK+6Jf'.encode()).hexdigest()
+    row_data = f'cId={cid}&signDate={ts}000&ts={ts}0]3K@\'9MK+6Jf'
+    x_data_sign = hashlib.md5(row_data.encode('utf-8')).hexdigest().lower()
+    log.info(f'row_data: {row_data}, x_data_sign: {x_data_sign}')
     headers = {
         'origin': 'https://app.geely.com',
         'referer': 'https://app.geely.com/app-h5/sign-in?showTitleBar=0',
