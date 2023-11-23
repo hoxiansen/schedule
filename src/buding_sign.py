@@ -117,7 +117,7 @@ def abcd5(_0x30fc22):
 def sign():
     info = spider()
     log.info(str(info))
-    time.sleep(5)
+    time.sleep(20)
     url = 'https://www.wjx.cn/joinnew/processjq.ashx'
     activityId = info['activityId']
     ktimes = 23
